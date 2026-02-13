@@ -454,8 +454,9 @@ export default function AnniversaryJourneySite() {
   const [story] = useState(DEFAULT_STORY);
   const [memoryOpen, setMemoryOpen] = useState(false);
   const [photoOpen, setPhotoOpen] = useState(false);
-  const [activeChapter, setActiveChapter] = useState(null);
-  const [activePhoto, setActivePhoto] = useState(null);
+ const [activeChapter, setActiveChapter] = useState<typeof DEFAULT_STORY[number] | null>(null);
+ const [activePhoto, setActivePhoto] = useState<typeof DEFAULT_STORY[number]["photos"][number] | null>(null);
+
 
   const scrollProgress = useScrollProgress();
   const smooth = useSpring(scrollProgress, { stiffness: 160, damping: 26 });
