@@ -388,7 +388,7 @@ function JourneyCard({
 }
 
 function MusicToggle({ src }: { src: string }) {
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [on, setOn] = useState(false);
 
   useEffect(() => {
