@@ -475,7 +475,7 @@ export default function AnniversaryJourneySite() {
     setPhotoOpen(true);
   };
 
-  const jumpTo = (id) => {
+const jumpTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
