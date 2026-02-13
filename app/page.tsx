@@ -208,7 +208,16 @@ function FloatingParticles() {
   );
 }
 
-function Modal({ open, onClose, children }) {
+function Modal({
+  open,
+  onClose,
+  children
+}: {
+  open: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}) {
+
   return (
     <AnimatePresence>
       {open ? (
@@ -240,7 +249,13 @@ function Modal({ open, onClose, children }) {
   );
 }
 
-function PhotoGrid({ photos, onOpen }) {
+function PhotoGrid({
+  photos,
+  onOpen
+}: {
+  photos: typeof DEFAULT_STORY[number]["photos"];
+  onOpen: (p: typeof DEFAULT_STORY[number]["photos"][number]) => void;
+}) {
   return (
     <div className="grid grid-cols-2 gap-3">
       {photos.map((p, i) => (
@@ -266,7 +281,18 @@ function PhotoGrid({ photos, onOpen }) {
   );
 }
 
-function JourneyCard({ chapter, index, onOpenMemory, onOpenPhoto }) {
+function JourneyCard({
+  chapter,
+  index,
+  onOpenMemory,
+  onOpenPhoto
+}: {
+  chapter: typeof DEFAULT_STORY[number];
+  index: number;
+  onOpenMemory: (c: typeof DEFAULT_STORY[number]) => void;
+  onOpenPhoto: (p: typeof DEFAULT_STORY[number]["photos"][number]) => void;
+}) {
+
   const ref = useRef(null);
 
   return (
@@ -361,7 +387,7 @@ function JourneyCard({ chapter, index, onOpenMemory, onOpenPhoto }) {
   );
 }
 
-function MusicToggle({ src }) {
+function MusicToggle({ src }: { src: string }) {
   const audioRef = useRef(null);
   const [on, setOn] = useState(false);
 
@@ -406,7 +432,11 @@ function MusicToggle({ src }) {
   );
 }
 
-function ProgressRail({ progress }) {
+function ProgressRail({
+  progress
+}: {
+  progress: ReturnType<typeof useScrollProgress>;
+}) {
   const smooth = useSpring(progress, { stiffness: 180, damping: 28 });
   const height = useTransform(smooth, [0, 1], [0, 100]);
 
