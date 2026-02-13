@@ -462,12 +462,14 @@ export default function AnniversaryJourneySite() {
   const bgY = useTransform(smooth, [0, 1], [0, -240]);
   const glow = useTransform(smooth, [0, 1], [0.15, 0.5]);
 
-  const openMemory = (chapter) => {
+  const openMemory = (chapter: typeof DEFAULT_STORY[number]) => {
     setActiveChapter(chapter);
     setMemoryOpen(true);
   };
 
-  const openPhoto = (photo) => {
+  const openPhoto = (
+  photo: typeof DEFAULT_STORY[number]["photos"][number]
+) => {
     setActivePhoto(photo);
     setPhotoOpen(true);
   };
