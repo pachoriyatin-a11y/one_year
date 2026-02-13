@@ -8,7 +8,8 @@ import { Heart, Sparkles, Music2, MapPin, ChevronDown, X, Play, Pause } from "lu
 // - Replace the placeholder photos (picsum URLs) with your own images.
 // - Works best in a modern React app (Vite/Next). Tailwind assumed.
 
-const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+const clamp = (n: number, a: number, b: number): number =>
+  Math.max(a, Math.min(b, n));
 
 const DEFAULT_STORY = [
   {
