@@ -598,7 +598,7 @@ export default function AnniversaryJourneySite() {
 
       {/* Journey */}
       <main>
-        {story.map((chapter, idx) => (
+      {story.map((chapter: typeof DEFAULT_STORY[number], idx) => (
           <JourneyCard
             key={chapter.id}
             chapter={chapter}
